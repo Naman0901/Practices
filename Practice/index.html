@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--Get Data-->
+
+        {{message}}
+        <p>{{greet("afternoon")}}</p>
+
+        <!--v-model to bind-->
+
+        <input type="text" v-model="name">
+        <p>{{name}} age is {{age}}</p>
+
+
+        <!--On Click event-->
+        <h1>Events</h1>
+        <button v-on:click.once="add(1)">Add a Year</button>
+        <button v-on:click="sub(1)">Sub a Year</button>
+        <button v-on:dblclick="add(10)">Add 10 Year</button>
+        <button @dblclick="sub(10)">Sub 10 Year</button><br>
+        
+        <!--Prevent On Click-->
+        <a v-on:click.prevent="click" href="https://www.google.com">Google</a>
+        <br><br>
+        
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>

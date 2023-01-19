@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Vue js 2 </title>
+    <script src="vue.min.js"></script>
+</head>
+
+<body>
+    <!--Components in Vue-->
+
+    <h1>Components</h1>
+    <div id="comp1">
+        <h2>Vue App one</h2>
+        <greetings></greetings>
+    </div>
+    <div id="comp2">
+        <h2>Vue App Two</h2>
+        <greetings></greetings>
+    </div>
+
+    <!--References in Vue-->
+
+    <div id="refs">
+        <h1>Refs</h1>
+        <input type="text" ref="input"/>
+        <button @click="readRefs">Submit</button>
+        <p>Your Fav Food : {{output}}</p>
+        <div ref="test">Hello</div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>

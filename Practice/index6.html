@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app5">
+
+        <h1>Conditionals</h1>
+        <button @click="error=!error">Toogle Error</button>
+        <button @click="success=!success"> Toogle Success</button>
+        <p v-if="error">there has been an error</p>
+        <p v-else-if="success">there has been an succes</p>
+        <p v-show="error">error</p>
+        <p v-show="success">success</p>
+
+    </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>
