@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        function todosub() {
+            var item = $('form input');
+            var todo = { item: item.val() };
+            console.log(todo);
+            $.ajax({
+                type: 'POST',
+                url: '/todo',
+                data: todo,
+                success: function (data) {
+                    location.reload();
+                }
+            });
+            return false;
+        }
+        function demo(event) {
+            var target = event.target || event.srcElement;
+            $.ajax({
+                type: 'DELETE',
+                url: '/todo/' + target.innerHTML,
+                success: function (data) {
+                    location.reload();
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div id="todo-table">
+        <form onsubmit="todosub()">
+            <input type="text" name="item" placeholder="Add new item..." required />
+            <button type="submit">Add Item</button>
+        </form>
+        <ul>
+            <% for(var i=0; i < todos.length; i++){ %>
+            <li onclick="demo(event)"><%= todos[i].item %></li>
+            <% } %>
+
+        </ul>
+    </div>
+</body>
+
+</html>
